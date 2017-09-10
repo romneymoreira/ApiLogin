@@ -1,0 +1,51 @@
+-- Create table
+create table Role
+(
+  "Id"               NUMBER(10) not null,
+  "Name"             NVARCHAR2(100) not null,
+  "IdDepartment"     NUMBER(10) not null,
+  "Identifier"       NVARCHAR2(100),
+  "IdFeatureInicial" NUMBER(10)
+)
+tablespace USERS_NEW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate indexes 
+create index IX_Role_IdDepartment on Role (IdDepartment)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table Role
+  add primary key (ID)
+  using index 
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table Role
+  add constraint FK_598343470 foreign key (IDDEPARTMENT)
+  references Department (ID) on delete cascade;

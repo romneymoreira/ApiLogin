@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>AutoMapper</id>
+        <version>3.3.1</version>
+        <authors>Jimmy Bogard</authors>
+        <owners>Jimmy Bogard</owners>
+        <licenseUrl>https://github.com/AutoMapper/AutoMapper/blob/master/LICENSE.txt</licenseUrl>
+        <projectUrl>http://automapper.org</projectUrl>
+        <iconUrl>https://s3.amazonaws.com/automapper/icon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A convention-based object-object mapper. AutoMapper uses a fluent configuration API to define an object-object mapping strategy. AutoMapper uses a convention-based matching algorithm to match up source to destination values. Currently, AutoMapper is geared towards model projection scenarios to flatten complex object models to DTOs and other simple objects, whose design is better suited for serialization, communication, messaging, or simply an anti-corruption layer between the domain and application layer.</description>
+        <summary>A convention-based object-object mapper</summary>
+    </metadata>
+    <files>
+        <file src="lib\MonoAndroid\AutoMapper.Android.dll" target="lib\MonoAndroid\AutoMapper.Android.dll" />
+        <file src="lib\MonoAndroid\AutoMapper.Android.pdb" target="lib\MonoAndroid\AutoMapper.Android.pdb" />
+        <file src="lib\MonoAndroid\AutoMapper.dll" target="lib\MonoAndroid\AutoMapper.dll" />
+        <file src="lib\MonoAndroid\AutoMapper.pdb" target="lib\MonoAndroid\AutoMapper.pdb" />
+        <file src="lib\MonoAndroid\AutoMapper.xml" target="lib\MonoAndroid\AutoMapper.xml" />
+        <file src="lib\MonoTouch\AutoMapper.dll" target="lib\MonoTouch\AutoMapper.dll" />
+        <file src="lib\MonoTouch\AutoMapper.iOS.dll" target="lib\MonoTouch\AutoMapper.iOS.dll" />
+        <file src="lib\MonoTouch\AutoMapper.iOS.pdb" target="lib\MonoTouch\AutoMapper.iOS.pdb" />
+        <file src="lib\MonoTouch\AutoMapper.pdb" target="lib\MonoTouch\AutoMapper.pdb" />
+        <file src="lib\MonoTouch\AutoMapper.xml" target="lib\MonoTouch\AutoMapper.xml" />
+        <file src="lib\net40\AutoMapper.dll" target="lib\net40\AutoMapper.dll" />
+        <file src="lib\net40\AutoMapper.Net4.dll" target="lib\net40\AutoMapper.Net4.dll" />
+        <file src="lib\net40\AutoMapper.Net4.pdb" target="lib\net40\AutoMapper.Net4.pdb" />
+        <file src="lib\net40\AutoMapper.pdb" target="lib\net40\AutoMapper.pdb" />
+        <file src="lib\net40\AutoMapper.xml" target="lib\net40\AutoMapper.xml" />
+        <file src="lib\portable-windows8+net40+wp8+sl5+MonoAndroid+MonoTouch\AutoMapper.dll" target="lib\portable-windows8+net40+wp8+sl5+MonoAndroid+MonoTouch\AutoMapper.dll" />
+        <file src="lib\portable-windows8+net40+wp8+sl5+MonoAndroid+MonoTouch\AutoMapper.pdb" target="lib\portable-windows8+net40+wp8+sl5+MonoAndroid+MonoTouch\AutoMapper.pdb" />
+        <file src="lib\portable-windows8+net40+wp8+sl5+MonoAndroid+MonoTouch\AutoMapper.xml" target="lib\portable-windows8+net40+wp8+sl5+MonoAndroid+MonoTouch\AutoMapper.xml" />
+        <file src="lib\portable-windows8+net40+wp8+wpa81+sl5+MonoAndroid+MonoTouch\AutoMapper.dll" target="lib\portable-windows8+net40+wp8+wpa81+sl5+MonoAndroid+MonoTouch\AutoMapper.dll" />
+        <file src="lib\portable-windows8+net40+wp8+wpa81+sl5+MonoAndroid+MonoTouch\AutoMapper.pdb" target="lib\portable-windows8+net40+wp8+wpa81+sl5+MonoAndroid+MonoTouch\AutoMapper.pdb" />
+        <file src="lib\portable-windows8+net40+wp8+wpa81+sl5+MonoAndroid+MonoTouch\AutoMapper.xml" target="lib\portable-windows8+net40+wp8+wpa81+sl5+MonoAndroid+MonoTouch\AutoMapper.xml" />
+        <file src="lib\sl5\AutoMapper.dll" target="lib\sl5\AutoMapper.dll" />
+        <file src="lib\sl5\AutoMapper.pdb" target="lib\sl5\AutoMapper.pdb" />
+        <file src="lib\sl5\AutoMapper.SL5.dll" target="lib\sl5\AutoMapper.SL5.dll" />
+        <file src="lib\sl5\AutoMapper.SL5.pdb" target="lib\sl5\AutoMapper.SL5.pdb" />
+        <file src="lib\sl5\AutoMapper.xml" target="lib\sl5\AutoMapper.xml" />
+        <file src="lib\windows8\AutoMapper.dll" target="lib\windows8\AutoMapper.dll" />
+        <file src="lib\windows8\AutoMapper.pdb" target="lib\windows8\AutoMapper.pdb" />
+        <file src="lib\windows8\AutoMapper.WinRT.dll" target="lib\windows8\AutoMapper.WinRT.dll" />
+        <file src="lib\windows8\AutoMapper.WinRT.pdb" target="lib\windows8\AutoMapper.WinRT.pdb" />
+        <file src="lib\windows8\AutoMapper.xml" target="lib\windows8\AutoMapper.xml" />
+        <file src="lib\wp8\AutoMapper.dll" target="lib\wp8\AutoMapper.dll" />
+        <file src="lib\wp8\AutoMapper.pdb" target="lib\wp8\AutoMapper.pdb" />
+        <file src="lib\wp8\AutoMapper.WP8.dll" target="lib\wp8\AutoMapper.WP8.dll" />
+        <file src="lib\wp8\AutoMapper.WP8.pdb" target="lib\wp8\AutoMapper.WP8.pdb" />
+        <file src="lib\wp8\AutoMapper.xml" target="lib\wp8\AutoMapper.xml" />
+        <file src="lib\wpa81\AutoMapper.dll" target="lib\wpa81\AutoMapper.dll" />
+        <file src="lib\wpa81\AutoMapper.pdb" target="lib\wpa81\AutoMapper.pdb" />
+        <file src="lib\wpa81\AutoMapper.WPA81.dll" target="lib\wpa81\AutoMapper.WPA81.dll" />
+        <file src="lib\wpa81\AutoMapper.WPA81.pdb" target="lib\wpa81\AutoMapper.WPA81.pdb" />
+        <file src="lib\wpa81\AutoMapper.xml" target="lib\wpa81\AutoMapper.xml" />
+        <file src="tools\MonoAndroid\Install.ps1" target="tools\MonoAndroid\Install.ps1" />
+        <file src="tools\MonoAndroid\uninstall.ps1" target="tools\MonoAndroid\uninstall.ps1" />
+        <file src="tools\MonoTouch\Install.ps1" target="tools\MonoTouch\Install.ps1" />
+        <file src="tools\MonoTouch\uninstall.ps1" target="tools\MonoTouch\uninstall.ps1" />
+        <file src="tools\net40\Install.ps1" target="tools\net40\Install.ps1" />
+        <file src="tools\net40\uninstall.ps1" target="tools\net40\uninstall.ps1" />
+        <file src="tools\sl5\Install.ps1" target="tools\sl5\Install.ps1" />
+        <file src="tools\sl5\uninstall.ps1" target="tools\sl5\uninstall.ps1" />
+        <file src="tools\windows8\Install.ps1" target="tools\windows8\Install.ps1" />
+        <file src="tools\windows8\uninstall.ps1" target="tools\windows8\uninstall.ps1" />
+        <file src="tools\wp8\Install.ps1" target="tools\wp8\Install.ps1" />
+        <file src="tools\wp8\uninstall.ps1" target="tools\wp8\uninstall.ps1" />
+        <file src="tools\wpa81\Install.ps1" target="tools\wpa81\Install.ps1" />
+        <file src="tools\wpa81\uninstall.ps1" target="tools\wpa81\uninstall.ps1" />
+        <file src="tools\AutoMapper.targets" target="tools\AutoMapper.targets" />
+    </files>
+</package>

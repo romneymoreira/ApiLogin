@@ -1,0 +1,63 @@
+-- Create table
+create table RoleFeature
+(
+  "Role_Id"    NUMBER(10) not null,
+  "Feature_Id" NUMBER(10) not null
+)
+tablespace USERS_NEW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate indexes 
+create index IX_RoleFeature_Feature_Id on RoleFeature (Feature_Id)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IX_RoleFeature_Role_Id on RoleFeature (Role_Id)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table RoleFeature
+  add primary key (ROLE_ID, FEATURE_ID)
+  using index 
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table RoleFeature
+  add constraint FK_N245950163 foreign key (FEATURE_ID)
+  references Feature (ID) on delete cascade;
+alter table RoleFeature
+  add constraint FK_RoleFeature_Role_Role_Id foreign key (ROLE_ID)
+  references Role (ID) on delete cascade;

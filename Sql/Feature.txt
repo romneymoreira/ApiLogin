@@ -1,0 +1,55 @@
+-- Create table
+create table Feature
+(
+  "Id"           NUMBER(10) not null,
+  "IdModule"     NUMBER(10) not null,
+  "Name"         NVARCHAR2(150) not null,
+  "Controller"   NVARCHAR2(50) default '' not null,
+  "Link"         VARCHAR2(150),
+  "Icone"        VARCHAR2(30),
+  "IdFeaturePai" NUMBER,
+  "Situacao"     CHAR(1),
+  "Ordenacao"    NUMBER
+)
+tablespace USERS_NEW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate indexes 
+create index IX_Feature_IdModule on Feature (IdModule)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table Feature
+  add primary key (ID)
+  using index 
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table Feature
+  add constraint FK_Feature_Module_IdModule foreign key (IDMODULE)
+  references Module (ID) on delete cascade;

@@ -1,0 +1,56 @@
+-- Create table
+create table User
+(
+  "Id"              NUMBER(10) not null,
+  "UserName"        NVARCHAR2(25) not null,
+  "Password"        NVARCHAR2(128) not null,
+  "Name"            NVARCHAR2(120) not null,
+  "Mobile"          NVARCHAR2(11),
+  "Email"           NVARCHAR2(40) not null,
+  "Status"          NUMBER(10) not null,
+  "Level"           NUMBER(10) default 0 not null,
+  "Token"           NVARCHAR2(200),
+  "TokenExpiration" DATE
+)
+tablespace USERS_NEW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column User."Level"
+  is 'SysAdmin = 5
+Administrador Técnico (FullAdmin)
+
+Admin = 4
+Administrador do sistema
+
+Manager = 3
+Acessa todas as funcionalidades do sistema, exceto funcionalidades de administração - Nao requer role associada
+
+SuperUser = 2
+Acessa todas as funcionalidades do sistema, mas só altera as do seu papel (role) e definidas no seu usuario (UserFeature)
+
+User = 1
+Usuário padrão - Acessa apenas as funcionalidades definidas no seu papel(role) e funcionalidades definidas no seu usuario (UserFeature)';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table User
+  add primary key (ID)
+  using index 
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );

@@ -1,0 +1,64 @@
+-- Create table
+create table UserFeatureAction
+(
+  "UserId"          NUMBER(10) not null,
+  "FeatureId"       NUMBER(10) not null,
+  "FeatureActionId" NUMBER(10) not null
+)
+tablespace USERS_NEW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate indexes 
+create index IX_N1429491245 on UserFeatureAction (UserId, FeatureId)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IX_284761361 on UserFeatureAction (FeatureActionId)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table UserFeatureAction
+  add primary key (USERID, FEATUREID, FEATUREACTIONID)
+  using index 
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table UserFeatureAction
+  add constraint FK_2094129501 foreign key (USERID, FEATUREID)
+  references UserFeature (USERID, FEATUREID) on delete cascade;
+alter table UserFeatureAction
+  add constraint FK_271091035 foreign key (FEATUREACTIONID)
+  references FeatureAction (ID) on delete cascade;

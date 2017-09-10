@@ -1,0 +1,61 @@
+-- Create table
+create table UserFeature
+(
+  "UserId"    NUMBER(10) not null,
+  "FeatureId" NUMBER(10) not null,
+  "CanAccess" NUMBER(1) not null
+)
+tablespace USERS_NEW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate indexes 
+create index IX_UserFeature_FeatureId on UserFeature (FeatureId)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IX_UserFeature_UserId on UserFeature (UserId)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table UserFeature
+  add primary key (USERID, FEATUREID)
+  using index 
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table UserFeature
+  add constraint FK_UserFeature_User_UserId foreign key (USERID)
+  references User (ID) on delete cascade;

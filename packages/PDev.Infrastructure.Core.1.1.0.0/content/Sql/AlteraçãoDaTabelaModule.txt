@@ -1,0 +1,7 @@
+﻿Alter table "Module" add ("AutenticaSolus" number);
+update "Module" set "AutenticaSolus" = 0;
+Commit;
+
+Alter table "Module" add ("KeyModule" VARCHAR2(20));
+update "Module" set "KeyModule" = "Name";
+Commit;

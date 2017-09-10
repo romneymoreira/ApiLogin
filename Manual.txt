@@ -1,0 +1,26 @@
+﻿PDev.Auth.Api
+API para autenticação de módulos
+==========================================================
+
+Web.config
+
+1 - Adicionar a chave "machineKey" com a mesma key nos projetos que irão consumir a API, as chaves tem que ser idênticas
+
+ <system.web>
+	 <!-- Chave para validação de token -->
+	 <machineKey validationKey="13C73BB6064054C7851AC6949204075B9D1914577B73F577909147114D7D16AC00D6B29D0DF099E7438A56E691FB53CDC1B150F8DD447FE97450E53BD6B2E4E4" decryptionKey="C0CD853D1E48136B47A10A001C4B90E659E90BC019EAAF4A8B15C3BFDEA56F07" validation="SHA1" decryption="AES" />
+ </system.web>
+
+2 - Parâmetros da API para autenticação
+
+   2.1 - user
+   2.2 - password
+   2.3 - module
+   2.4 - grant_type=password
+
+3 - No arquivo WebApiConfig.cs das APIS, que irão consumir o serviço de autenticação é necessário adicionar as linhas de código,
+    no método "Register": 
+
+			// Web API configuration and services
+            config.SuppressDefaultHostAuthentication();
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType ));

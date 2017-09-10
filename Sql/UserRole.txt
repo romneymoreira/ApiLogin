@@ -1,0 +1,60 @@
+-- Create table
+create table UserRole
+(
+  "User_Id" NUMBER(10) not null,
+  "Role_Id" NUMBER(10) not null
+)
+tablespace USERS_NEW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate indexes 
+create index IX_UserRole_Role_Id on UserRole (Role_Id)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create index IX_UserRole_User_Id on UserRole (User_Id)
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table UserRole
+  add primary key (USER_ID, ROLE_ID)
+  using index 
+  tablespace USERS_NEW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table UserRole
+  add constraint FK_UserRole_User_User_Id foreign key (USER_ID)
+  references User (ID) on delete cascade;
